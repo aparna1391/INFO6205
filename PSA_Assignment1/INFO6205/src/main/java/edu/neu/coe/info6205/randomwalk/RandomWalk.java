@@ -85,7 +85,7 @@ public class RandomWalk {
          //   throw new RuntimeException("Syntax: RandomWalk steps [experiments]");
         //int m = Integer.parseInt(args[0]);
     	int arr[] = {100,200,50,70,20,10,80};
-        int n = 800;
+        int n = 10;
         if (args.length > 1) n = Integer.parseInt(args[1]);
         for(int m = 0;m<=arr.length-1;m++)
         {
