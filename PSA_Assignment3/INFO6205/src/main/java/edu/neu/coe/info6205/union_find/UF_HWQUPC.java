@@ -8,11 +8,13 @@
 package edu.neu.coe.info6205.union_find;
 
 import java.util.Arrays;
+import java.util.Random;
 
 /**
  * Height-weighted Quick Union with Path Compression
  */
 public class UF_HWQUPC implements UF {
+	//public int count=0;
     /**
      * Ensure that site p is connected to site q,
      *
@@ -103,6 +105,27 @@ public class UF_HWQUPC implements UF {
      * @throws IllegalArgumentException unless
      *                                  both {@code 0 <= p < n} and {@code 0 <= q < n}
      */
+    public  int counts(int n)
+    {
+    	int cntt=0;
+    	Random r=new Random();
+    	while(count>1)
+    	{
+    		int a = r.nextInt(n);
+        	int b=r.nextInt(n);
+        	cntt++;
+        //	System.out.println(a+ "" +b);
+        	
+        	if(!connected(a, b) && a!=b) {
+        	
+        		union(a,b);
+        		
+        	}
+    	}
+    	
+    	return cntt;
+    	
+    }
     public boolean connected(int p, int q) {
         return find(p) == find(q);
     }
@@ -173,7 +196,7 @@ public class UF_HWQUPC implements UF {
 
     private final int[] parent;   // parent[i] = parent of i
     private final int[] height;   // height[i] = height of subtree rooted at i
-    private int count;  // number of components
+    public int count;  // number of components
     private boolean pathCompression;
 
     private void mergeComponents(int i, int j) {
@@ -204,4 +227,15 @@ public class UF_HWQUPC implements UF {
     	if(pathCompression)
     	parent[i]=parent[parent[i]];
     }
+    
+//    public static void main(String args[]) {
+//    	int n=1000;
+//    	
+//    	//r.ints(1, 6);
+//    	UF_HWQUPC uf=new UF_HWQUPC(n);
+//    	System.out.println(uf.counts(n));
+//    	
+//    	
+//    	
+//    }
 }

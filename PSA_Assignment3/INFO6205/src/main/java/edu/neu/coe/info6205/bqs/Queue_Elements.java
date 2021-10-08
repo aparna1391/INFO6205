@@ -26,6 +26,11 @@ public class Queue_Elements<Item> implements SizedIterable<Item>, Queue<Item> {
      */
     public void enqueue(Item item) {
         // TO BE IMPLEMENTED
+    	  Element<Item> newest = oldest;
+    	        oldest = new Element<>(item,newest);
+    		
+    	
+    	
     }
 
 
@@ -38,8 +43,11 @@ public class Queue_Elements<Item> implements SizedIterable<Item>, Queue<Item> {
         if (isEmpty()) return null;
         else {
             // TO BE IMPLEMENTED
+        	return oldest.next.item;
+        	//return oldest.item;
+        	
         }
-        return null;
+       // return null;
     }
 
     public boolean isEmpty() {

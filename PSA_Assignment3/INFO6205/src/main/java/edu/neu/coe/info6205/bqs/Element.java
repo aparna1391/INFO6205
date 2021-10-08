@@ -14,7 +14,7 @@ public class Element<Item> {
         this(x, null);
     }
 
-    final Item item;
+    Item item;
     Element<Item> next;
 
     @Override
